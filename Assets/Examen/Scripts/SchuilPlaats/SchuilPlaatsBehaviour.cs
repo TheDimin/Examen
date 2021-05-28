@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Examen.Managers;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -27,9 +28,9 @@ public class SchuilPlaatsBehaviour : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         OnTriggerEnter.Invoke(this);
-        if (SchuilPlaatsManager.LastBestSchuilPlaats == this)
+        if (SchuilPlaatsManager.Instance.LastBestSchuilPlaats == this)
         {
-            SchuilPlaatsManager.OnSafeZoneReached.Invoke(this);
+            SchuilPlaatsManager.Instance.OnSafeZoneReached.Invoke(this);
         }
     }
 }

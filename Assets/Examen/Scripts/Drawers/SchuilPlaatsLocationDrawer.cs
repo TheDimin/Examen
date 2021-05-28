@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Examen.Managers;
 using UnityEngine;
 
 public class SafeZoneLocationDrawer : Drawer
@@ -12,8 +13,8 @@ public class SafeZoneLocationDrawer : Drawer
 
     public SafeZoneLocationDrawer() : base()
     {
-        OnBestSafeZoneChange(SchuilPlaatsManager.LastBestSchuilPlaats);
-        SchuilPlaatsManager.OnBestSafeZoneFound.AddListener(OnBestSafeZoneChange);
+        OnBestSafeZoneChange(SchuilPlaatsManager.Instance.LastBestSchuilPlaats);
+        SchuilPlaatsManager.Instance.OnBestSafeZoneFound.AddListener(OnBestSafeZoneChange);
         cam = Camera.main;
     }
 
@@ -55,6 +56,6 @@ public class SafeZoneLocationDrawer : Drawer
     public override void Dispose()
     {
         base.Dispose();
-        SchuilPlaatsManager.OnBestSafeZoneFound.RemoveListener(OnBestSafeZoneChange);
+        SchuilPlaatsManager.Instance.OnBestSafeZoneFound.RemoveListener(OnBestSafeZoneChange);
     }
 }

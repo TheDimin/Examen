@@ -67,13 +67,16 @@ public abstract class Drawer : IDisposable
         return Window;
     }
 
-    public TDrawer LoadChild<TDrawer>(Transform transform, string path = "") where TDrawer : Drawer, new()
+    public TDrawer LoadChild<TDrawer>(Transform transform, string path = "", bool manualDraw = false) where TDrawer : Drawer, new()
     {
         TDrawer d = new TDrawer();
         if (path != "")
             d.Path = path;
         d.LoadWindow(transform);
-        d.Draw();
+
+        if (!manualDraw)
+            d.Draw();
+
         Childs.Add(d);
         return d;
     }

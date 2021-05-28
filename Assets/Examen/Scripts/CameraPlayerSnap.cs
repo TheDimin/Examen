@@ -6,9 +6,12 @@ public class CameraPlayerSnap : MonoBehaviour
 {
     [SerializeField] private float distance = 50;
     private Transform PcT;
-    private void Start()
+
+    private void Awake()
     {
-        PcT = GameManager.Instance.GetPlayerController().transform;
+        PcT = Transform.FindObjectOfType<PlayerController>().transform;
+        if (PcT == null)
+            enabled = false;
     }
 
     private void FixedUpdate()

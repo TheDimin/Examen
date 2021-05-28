@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Examen.Managers;
 using UnityEditor;
 using UnityEngine;
 
-public static class NavManager
+public class NavManager : Singelton<NavManager>
 {
-    public static Vector2 StartPoint
+    public Vector2 StartPoint
     {
         get => _startPoint;
         set
@@ -18,24 +19,23 @@ public static class NavManager
         }
     }
 
-    private static Vector2 _startPoint = new Vector2(0, 0);
-    private static Vector2 NodeCount = new Vector2(100, 100);
+    private Vector2 _startPoint = new Vector2(0, 0);
+    private Vector2 NodeCount = new Vector2(100, 100);
 
-    private static List<NavNode> CalculatingNodes = new List<NavNode>();
+    private List<NavNode> CalculatingNodes = new List<NavNode>();
 
-    private static NavNode[] currentPath;
+    private NavNode[] currentPath;
 
-    private static NavNode[] nodes;
+    private NavNode[] nodes;
     private static float size = .8f;
 
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-    public static void Awake()
+    public override void Awake()
     {
         if (nodes == null)
             GenerateNav();
     }
 
-    public static void OnDrawGizmos()
+    public override void OnDrawGizmos()
     {
         if (nodes == null) return;
         HashSet<Vector2> drawnSet = new HashSet<Vector2>();
@@ -67,7 +67,7 @@ public static class NavManager
         }
     }
 
-    public static async Task<NavNode[]> FindPath(Vector2 pos, Vector2[] targetPos)
+    public async Task<NavNode[]> FindPath(Vector2 pos, Vector2[] targetPos)
     {
         CalculatingNodes = new List<NavNode>();
         currentPath = null;
@@ -123,7 +123,7 @@ public static class NavManager
         return null;
     }
 
-    private static NavNode findClosestNode(Vector2 pos)
+    private NavNode findClosestNode(Vector2 pos)
     {
         float distance = -1;
         NavNode closeNode = null;
@@ -138,7 +138,7 @@ public static class NavManager
         return closeNode;
     }
 
-    private static NavNode[] GetPath(ref Dictionary<NavNode, NavNode> nodes, NavNode start)
+    private NavNode[] GetPath(ref Dictionary<NavNode, NavNode> nodes, NavNode start)
     {
         HashSet<NavNode> path = new HashSet<NavNode>();
         path.Add(start);
@@ -163,7 +163,7 @@ public static class NavManager
         return currentPath;
     }
 
-    private static void GenerateNav()
+    private void GenerateNav()
     {
         Debug.LogWarning("Generating nav");
 
@@ -199,9 +199,9 @@ public static class NavManager
 
                     if (x != 0 && y != 0)
                     {
-                  //      NavNode OtherNode = nodes[(x - 1) + (y - 1) * (int)NodeCount.y];
-                  //      OtherNode.AddNeighbour(newNode);
-                   //     newNode.AddNeighbour(OtherNode);
+                        //      NavNode OtherNode = nodes[(x - 1) + (y - 1) * (int)NodeCount.y];
+                        //      OtherNode.AddNeighbour(newNode);
+                        //     newNode.AddNeighbour(OtherNode);
                     }
 
 

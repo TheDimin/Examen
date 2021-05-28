@@ -1,15 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
+using Examen.Managers;
 using UnityEngine;
 
-public class HudDrawer : Drawer
+public abstract class HudDrawer<TLevel> : Drawer where TLevel : Level
+{
+    protected TLevel Level;
+
+    public void SetLevel(TLevel level)
+    {
+        this.Level = level;
+    }
+}
+
+public class EditorHudDrawer : HudDrawer<ScenarioEditor>
+{
+    protected override string Path { get; set; } = "Editor/Hud";
+    public override void Draw()
+    {
+    }
+}
+
+public class GameHudDrawer : HudDrawer<GameLevel>
 {
     private WindDrawer windDrawer;
     private SafeZoneLocationDrawer safeZoneLocationDrawer;
     private ActiveEventDrawer eventDrawer;
-    public HudDrawer() : base()
+    public GameHudDrawer() : base()
     {
-        SchuilPlaatsManager.OnSafeZoneReached.AddListener(OnSafeZoneReached);
+        SchuilPlaatsManager.Instance.OnSafeZoneReached.AddListener(OnSafeZoneReached);
     }
 
 
@@ -26,7 +45,7 @@ public class HudDrawer : Drawer
         base.Dispose();
         windDrawer = null;
         safeZoneLocationDrawer = null;
-        SchuilPlaatsManager.OnSafeZoneReached.RemoveListener(OnSafeZoneReached);
+        SchuilPlaatsManager.Instance.OnSafeZoneReached.RemoveListener(OnSafeZoneReached);
     }
 
 

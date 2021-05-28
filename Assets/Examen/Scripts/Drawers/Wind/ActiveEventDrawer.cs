@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Examen.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +16,7 @@ public class ActiveEventDrawer : Drawer
 
     public ActiveEventDrawer() : base()
     {
-        EmergencyManager.onEventActivated.AddListener(OnBestSafeZoneFound);
+        EmergencyManager.Instance.onEventActivated.AddListener(OnBestSafeZoneFound);
         cam = Camera.main;
         //  OnBestSafeZoneFound(EmergencyManager.currentEvent);
     }
@@ -48,6 +49,6 @@ public class ActiveEventDrawer : Drawer
 
     public override void Dispose()
     {
-        EmergencyManager.onEventActivated.RemoveListener(OnBestSafeZoneFound);
+        EmergencyManager.Instance.onEventActivated.RemoveListener(OnBestSafeZoneFound);
     }
 }
