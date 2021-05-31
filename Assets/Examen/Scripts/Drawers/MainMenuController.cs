@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Examen.Level;
 using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
@@ -135,6 +136,7 @@ namespace MainMenu
         public override void Draw()
         {
             Transform.GetChild(0).GetComponent<Text>().text = ID;
+            Transform.GetComponent<Button>().onClick.AddListener(() => GameManager.Instance.OpenScenarioEditor(ID));
         }
 
         public override void Dispose()

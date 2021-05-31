@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Examen.Managers
 {
-    public abstract class Singelton<T> where T : new()
+    public abstract class Singelton<T> where T : class, new()
     {
         private static T _Instance;
 
@@ -35,10 +35,9 @@ namespace Examen.Managers
             Awake();
         }
 
-        public static T Reset()
+        public static void Dispose()
         {
-            _Instance = new T();
-            return _Instance;
+            _Instance = null;
         }
 
         public abstract void Awake();

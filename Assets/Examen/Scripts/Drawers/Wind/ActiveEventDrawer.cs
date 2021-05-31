@@ -37,7 +37,9 @@ public class ActiveEventDrawer : Drawer
     {
         if (eventLocation == null)
         {
-            Debug.LogWarning("Attempted to draw SafeZone, but no valid safezone");
+            Debug.LogWarning("Attempted to draw SafeZone, but no valid event location");
+            eventLocation = EmergencyManager.Instance.currentEvent;
+            evenTransform = eventLocation.transform;
             return;
         }
 

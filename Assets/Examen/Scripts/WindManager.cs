@@ -1,33 +1,12 @@
+using Examen.Managers;
 using UnityEngine.Events;
 
 public class WindEvent : UnityEvent<int>
 {
 };
 
-public static class WindManager
+public static class IntHelpers
 {
-    public static WindEvent OnDirectionChange = new WindEvent();
-    public static WindEvent OnSpeedChange = new WindEvent();
-
-    private static int direction = 0;
-    private static int speed = 0;
-
-    public static int GetWindDirection() => direction;
-
-    public static void SetWindDirection(int newDirection)
-    {
-        direction = newDirection;
-        OnDirectionChange.Invoke(newDirection);
-    }
-    public static int GetWindSpeed() => speed;
-
-    public static void SetWindSpeed(int newSpeed)
-    {
-        speed = newSpeed;
-        OnSpeedChange.Invoke(newSpeed);
-    }
-
-
     public static string GetDirection(this int directionInt)
     {
         //http://snowfence.umn.edu/Components/winddirectionanddegrees.htm
@@ -98,5 +77,34 @@ public static class WindManager
         }
 
         return "UNKOWN";
+    }
+
+}
+
+public class WindManager : Singelton<WindManager>
+{
+    public WindEvent OnDirectionChange = new WindEvent();
+    public WindEvent OnSpeedChange = new WindEvent();
+
+    private int direction = 0;
+    private int speed = 0;
+
+    public int GetWindDirection() => direction;
+
+    public void SetWindDirection(int newDirection)
+    {
+        direction = newDirection;
+        OnDirectionChange.Invoke(newDirection);
+    }
+    public int GetWindSpeed() => speed;
+
+    public void SetWindSpeed(int newSpeed)
+    {
+        speed = newSpeed;
+        OnSpeedChange.Invoke(newSpeed);
+    }
+
+    public override void Awake()
+    {
     }
 }

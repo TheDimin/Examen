@@ -7,15 +7,15 @@ public class WindDrawer : Drawer
 {
     public WindDrawer() : base()
     {
-        WindManager.OnDirectionChange.AddListener(UpdateDirection);
-        WindManager.OnSpeedChange.AddListener(UpdateSpeed);
+        WindManager.Instance.OnDirectionChange.AddListener(UpdateDirection);
+        WindManager.Instance.OnSpeedChange.AddListener(UpdateSpeed);
     }
 
     protected override string Path { get; set; } = "Wind";
     public override void Draw()
     {
-        UpdateDirection(WindManager.GetWindDirection());
-        UpdateSpeed(WindManager.GetWindSpeed());
+        UpdateDirection(WindManager.Instance.GetWindDirection());
+        UpdateSpeed(WindManager.Instance.GetWindSpeed());
     }
 
     private void UpdateDirection(int dir)
@@ -35,7 +35,7 @@ public class WindDrawer : Drawer
     public override void Dispose()
     {
         base.Dispose();
-        WindManager.OnDirectionChange.RemoveListener(UpdateDirection);
-        WindManager.OnSpeedChange.RemoveListener(UpdateSpeed);
+        WindManager.Instance.OnDirectionChange.RemoveListener(UpdateDirection);
+        WindManager.Instance.OnSpeedChange.RemoveListener(UpdateSpeed);
     }
 }
