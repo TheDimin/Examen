@@ -11,8 +11,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public Level level { get; private set; }
 
-    private ScenarioEditor scenarioEditor;
-
     private void Awake()
     {
         if (Instance != null)

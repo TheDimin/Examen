@@ -10,7 +10,7 @@ namespace Examen.Level
         private PlayerController pc;
         public override int Scene { get; protected set; } = 1;
 
-        public float Timer { get; private set; } = 60 * .1f;
+        public float Timer { get; private set; } = 60;
 
         public UnityEvent OnOutOfTime = new UnityEvent();
 
