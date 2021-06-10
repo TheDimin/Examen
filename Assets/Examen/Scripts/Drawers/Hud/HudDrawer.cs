@@ -42,9 +42,16 @@ namespace Examen.Level
 
         public override void Draw()
         {
-            windDrawer = LoadChild<WindDrawer>(Transform.Find("WindSlot"));
-            safeZoneLocationDrawer = LoadChild<SafeZoneLocationDrawer>(Transform);
-            eventDrawer = LoadChild<ActiveEventDrawer>(Transform);
+            if (gl.LevelData.LocatieHint)
+            {
+                windDrawer = LoadChild<WindDrawer>(Transform.Find("WindSlot"));
+                safeZoneLocationDrawer = LoadChild<SafeZoneLocationDrawer>(Transform);
+            }
+
+            eventDrawer = LoadChild<ActiveEventDrawer>(Transform, "", true);
+            eventDrawer.DrawHint = gl.LevelData.LocatieHint;
+            eventDrawer.Draw();
+
             timerText = Transform.Find("Timer").GetComponent<TextMeshProUGUI>();
         }
 
@@ -60,8 +67,11 @@ namespace Examen.Level
         public override void Dispose()
         {
             base.Dispose();
+
             windDrawer = null;
             safeZoneLocationDrawer = null;
+            eventDrawer = null;
+
             SafeZoneManager.Instance.OnSafeZoneReached.RemoveListener(OnSafeZoneReached);
             ((GameLevel)GameManager.Instance.level).OnOutOfTime.RemoveListener(OnOutOfTime);
         }

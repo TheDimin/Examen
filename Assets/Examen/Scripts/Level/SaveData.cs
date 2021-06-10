@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Examen.Level
 {
-   
+
     [System.Serializable]
     public struct ScenarioData
     {
@@ -14,7 +14,8 @@ namespace Examen.Level
         [SerializeField] public Vector3 StartLocation;
         [SerializeField] public Vector3 FireLocation;
         [SerializeField] public Vector3 SafeZone;
-
+        [SerializeField] public string AlarmLocation;
+        [SerializeField] public bool LocatieHint;
         public ScenarioData(string _)
         {
             this.ID = "INVALID";
@@ -22,6 +23,8 @@ namespace Examen.Level
             StartLocation = Vector3.zero;
             FireLocation = Vector3.zero;
             SafeZone = Vector3.zero;
+            AlarmLocation = "111";
+            LocatieHint = true;
         }
     }
 

@@ -28,7 +28,6 @@ namespace Examen.Level
         public void Save()
         {
             string jsonData = JsonConvert.SerializeObject(LevelData);
-            Debug.Log(jsonData);
             PlayerPrefs.SetString(ID, jsonData);
             PlayerPrefs.Save();
         }
@@ -43,7 +42,7 @@ namespace Examen.Level
             hud.Draw();
         }
 
-        public virtual void Update(float delta){}
+        public virtual void Update(float delta) { }
 
         public virtual void FixedUpdate()
         {
@@ -59,6 +58,7 @@ namespace Examen.Level
             SafeZoneManager.Dispose();
             EmergencyManager.Dispose();
             WindManager.Dispose();
+            AudioManager.Dispose();
 
         }
         public virtual void OnLoad(ScenarioData data)

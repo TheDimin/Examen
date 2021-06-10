@@ -116,14 +116,15 @@ public class SafeZoneSetLocationDrawer : SetLocationDrawer
     }
 }
 
+
 public class EditorHudDrawer : HudDrawer<ScenarioEditor>
 {
-    private TMP_InputField WindInput;
-
+    private Slider WindSlider;
+    private TMP_InputField AlarmCode;
     private SetLocationDrawer spawnLocation;
     private SetLocationDrawer fireLocation;
     private SetLocationDrawer BestSafeZoneLocation;
-
+    private Toggle HintToggle;
     protected override string Path { get; set; } = "Editor/Hud";
 
     public override void Draw()
@@ -133,10 +134,21 @@ public class EditorHudDrawer : HudDrawer<ScenarioEditor>
         BestSafeZoneLocation = LoadChild<SafeZoneSetLocationDrawer>(Transform, "Editor/SafeZone");
 
         //  GameObject.DontDestroyOnLoad(Transform);
-        WindInput = Transform.Find("Panel/Wind/InputField").GetComponent<TMP_InputField>();
+        WindSlider = Transform.Find("Panel/Wind/Slider").GetComponent<Slider>();
+        AlarmCode = Transform.Find("Panel/AlarmCode/InputField").GetComponent<TMP_InputField>();
+        HintToggle = Transform.Find("Panel/LocationHint/Toggle").GetComponent<Toggle>();
 
+        WindSlider.onValueChanged.AddListener(arg0 => SetWind(arg0));
+        AlarmCode.characterLimit = 3;
 
         Transform.Find("Panel/Save").GetComponent<Button>().onClick.AddListener(
+            () =>
+            {
+                Save(ref Level.LevelData);
+            }
+        );
+
+        Transform.Find("Panel/SaveAndExit").GetComponent<Button>().onClick.AddListener(
             () =>
             {
                 Save(ref Level.LevelData);
@@ -163,20 +175,32 @@ public class EditorHudDrawer : HudDrawer<ScenarioEditor>
             return angle;
     }
 
+    private void SetWind(float value, bool FromSave = false)
+    {
+        if (FromSave)
+            WindSlider.value = value;
+        Transform.Find("Panel/Wind/Text").GetComponent<TextMeshProUGUI>().text =
+            value.ToString(CultureInfo.InvariantCulture);
+    }
+
     private void Load(ref ScenarioData saveData)
     {
-        WindInput.text = saveData.wind.ToString(CultureInfo.InvariantCulture);
+        SetWind(saveData.wind, true);
         spawnLocation.WorldPos = saveData.StartLocation;
         fireLocation.WorldPos = saveData.FireLocation;
         BestSafeZoneLocation.WorldPos = saveData.SafeZone;
+        AlarmCode.text = saveData.AlarmLocation;
+        HintToggle.isOn = saveData.LocatieHint;
     }
 
     private void Save(ref ScenarioData saveData)
     {
-        saveData.wind = ClampAngle(int.Parse(WindInput.text));
+        saveData.wind = ClampAngle(WindSlider.value);
         saveData.StartLocation = spawnLocation.WorldPos;
         saveData.FireLocation = fireLocation.WorldPos;
         saveData.SafeZone = BestSafeZoneLocation.WorldPos;
+        saveData.AlarmLocation = AlarmCode.text;
+        saveData.LocatieHint = HintToggle.isOn;
         Level.Save();
     }
 }

@@ -12,6 +12,7 @@ public class SafeZoneBehaviour : MonoBehaviour
 {
     private new BoxCollider2D collider;
     public SafeZoneEvent OnTriggerEnter = new SafeZoneEvent();
+    [SerializeField] private Sprite image;
 
     void Awake()
     {
@@ -23,6 +24,8 @@ public class SafeZoneBehaviour : MonoBehaviour
         if (collider == null)
             collider = GetComponent<BoxCollider2D>();
         collider.isTrigger = true;
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+        renderer.sprite = image;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

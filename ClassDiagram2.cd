@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CameraPlayerSnap" Collapsed="true">
+    <Position X="35.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAgAEA=</HashCode>
+      <FileName>Assets\Examen\Scripts\CameraPlayerSnap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CameraPlayerController" Collapsed="true">
+    <Position X="33.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAAAAAAgAAAAAAAIAAAAAAAAAAARAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Examen\Scripts\CameraPlayerSnap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Drawer">
+    <Position X="14.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQACAAACACAAAoIgAQAIAAQAAAAAAAAgAAAACIAEQAA=</HashCode>
+      <FileName>Assets\Examen\Scripts\Drawers\DrawerBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SetLocationDrawer">
+    <Position X="9.75" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAABAAAAAAAAgIQAoAAAAAAAAAAAAgAAAAAQAAAQAA=</HashCode>
+      <FileName>Assets\Examen\Scripts\Drawers\Hud\EditorDrawers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SetLocationWithCollisionDrawer">
+    <Position X="8.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAgAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Assets\Examen\Scripts\Drawers\Hud\EditorDrawers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SafeZoneSetLocationDrawer">
+    <Position X="10.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEgAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Examen\Scripts\Drawers\Hud\EditorDrawers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorHudDrawer">
+    <Position X="12.5" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAhYAgADAAAAAAAAAAAACAAAAAABEAAA=</HashCode>
+      <FileName>Assets\Examen\Scripts\Drawers\Hud\EditorDrawers.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="spawnLocation" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SafeZoneLocationDrawer">
+    <Position X="8" Y="10" Width="1.5" />
+    <InheritanceLine Type="Drawer" FixedFromPoint="true">
+      <Path>
+        <Point X="15.5" Y="14.75" />
+        <Point X="15.5" Y="13.981" />
+        <Point X="13.333" Y="13.981" Type="JumpStart" />
+        <Point X="13.167" Y="13.981" Type="JumpEnd" />
+        <Point X="8.75" Y="13.981" />
+        <Point X="8.75" Y="13.29" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="targetSchuilPlaats" Type="SafeZoneBehaviour">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.17" Y="-0.327" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAABAAAACAAAgIAAIAAAAAAAAAAAAAgAAAAAAEAQEA=</HashCode>
+      <FileName>Assets\Examen\Scripts\Drawers\SafeZoneLocationDrawer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="targetSchuilPlaats" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ActiveEventDrawer">
+    <Position X="9.75" Y="10" Width="1.5" />
+    <InheritanceLine Type="Drawer" ManuallyRouted="true">
+      <Path>
+        <Point X="15.5" Y="14.75" />
+        <Point X="15.5" Y="13.981" />
+        <Point X="13.333" Y="13.981" Type="JumpStart" />
+        <Point X="13.167" Y="13.981" Type="JumpEnd" />
+        <Point X="10.5" Y="13.981" />
+        <Point X="10.5" Y="13.482" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="eventLocation" Type="EventLocation">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.176" Y="-0.517" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAABBAAACAAAgIIAIAAAAAAAAAAAAAABIAAAAAAQAA=</HashCode>
+      <FileName>Assets\Examen\Scripts\Drawers\Wind\ActiveEventDrawer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="eventLocation" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WindDrawer">
+    <Position X="14.75" Y="10.25" Width="1.5" />
+    <InheritanceLine Type="Drawer" FixedFromPoint="true">
+      <Path>
+        <Point X="15.5" Y="14.75" />
+        <Point X="15.5" Y="12.704" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAgIAAAAJAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Examen\Scripts\Drawers\Wind\WindDrawer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventLocation" Collapsed="true">
+    <Position X="12.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Examen\Scripts\EventLocation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameManager">
+    <Position X="17.25" Y="9.5" Width="1.5" />
+    <AssociationLine Name="level" Type="Examen.Level.Level">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.644" Y="0.394" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQEAAAACiIAAAAAAAAAAAAEAAEAAAAAQBAAAAAAEEA=</HashCode>
+      <FileName>Assets\Examen\Scripts\GameManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="level" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AudioManager">
+    <Position X="29.5" Y="24.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAIAgAAAEAAAAAAAIAAgAAAAAEAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Examen\Scripts\Managers\AudioManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NavNode" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="38.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAACAAAAAAkAAAgIAAAAAIAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\Examen\Scripts\NavhMesh\NavNode.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PlayerController">
+    <Position X="21.25" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAAAAAAgAAAAAUAAEAAAAAAAAAARAAAAAgAABAAEA=</HashCode>
+      <FileName>Assets\Examen\Scripts\PlayerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerHint" Collapsed="true">
+    <Position X="35.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Examen\Scripts\PlayerHint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SafeZoneEvent" Collapsed="true">
+    <Position X="31.25" Y="28.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Examen\Scripts\SafeZone\SafeZoneBehaviour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SafeZoneBehaviour">
+    <Position X="6.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAEEAAAAAAQAAAEAAAAEA=</HashCode>
+      <FileName>Assets\Examen\Scripts\SafeZone\SafeZoneBehaviour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindEvent" Collapsed="true">
+    <Position X="35.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Examen\Scripts\WindManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IntHelpers">
+    <Position X="33.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Examen\Scripts\WindManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindManager">
+    <Position X="34.25" Y="24.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAgIAAAAACAAAQAAAAAAQIAAAAAAAAABEA=</HashCode>
+      <FileName>Assets\Examen\Scripts\WindManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Examen.Level.HudDrawer&lt;TLevel&gt;">
+    <Position X="12.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Examen\Scripts\Drawers\Hud\HudDrawer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Examen.Level.GameHudDrawer">
+    <Position X="12.5" Y="10.5" Width="1.5" />
+    <AssociationLine Name="gl" Type="Examen.Level.GameLevel">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="4.925" Y="4.321" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="safeZoneLocationDrawer" Type="SafeZoneLocationDrawer">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.243" Y="0.284" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="windDrawer" Type="WindDrawer">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.71" Y="0.153" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAACAIggIAAQAAAAAAAAAAAAAEIAAAAAAAQgA=</HashCode>
+      <FileName>Assets\Examen\Scripts\Drawers\Hud\HudDrawer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="eventDrawer" />
+      <Field Name="gl" />
+      <Field Name="safeZoneLocationDrawer" />
+      <Field Name="windDrawer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Examen.Level.GameLevel">
+    <Position X="18.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQEAAAAAAAAAAgAgAAAAAACAAAAAAAMAACAAAAEAEA=</HashCode>
+      <FileName>Assets\Examen\Scripts\Level\GameLevel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="pc" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Examen.Level.Level">
+    <Position X="17.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAIgAAiAggAAAgAABAAACAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Examen\Scripts\Level\Level.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="LevelData" />
+      <Field Name="hud" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Examen.Level.ScenarioEditor">
+    <Position X="16.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Examen\Scripts\Level\ScenarioEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainMenu.PlayDrawer">
+    <Position X="7" Y="15" Width="1.5" />
+    <InheritanceLine Type="Drawer" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.5" Y="14.75" />
+        <Point X="15.5" Y="13.981" />
+        <Point X="13.333" Y="13.981" Type="JumpStart" />
+        <Point X="13.167" Y="13.981" Type="JumpEnd" />
+        <Point X="7.75" Y="13.981" />
+        <Point X="7.75" Y="15" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAACAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Examen\Scripts\Drawers\MainMenuController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainMenu.MainMenuController" Collapsed="true">
+    <Position X="37" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAABAEQ=</HashCode>
+      <FileName>Assets\Examen\Scripts\Drawers\MainMenuController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Examen.Managers.LocationEvent" Collapsed="true">
+    <Position X="35.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Examen\Scripts\Managers\EmergencyManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Examen.Managers.EmergencyManager">
+    <Position X="36.5" Y="24.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAIAAABAEA=</HashCode>
+      <FileName>Assets\Examen\Scripts\Managers\EmergencyManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Examen.Managers.Singelton&lt;T&gt;">
+    <Position X="33.25" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAACAAAAAAAAAEAAAAAAAAAAAAQAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Examen\Scripts\Managers\Singleton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Examen.Managers.SafeZoneManager">
+    <Position X="32.25" Y="24.5" Width="1.5" />
+    <AssociationLine Name="OnBestSafeZoneFound" Type="SafeZoneEvent">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.744" Y="0.339" Height="0.182" Width="1.635" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>CAIEAAgAAAAAEAAIAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Examen\Scripts\SafeZone\SafeZoneManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="OnBestSafeZoneFound" />
+    </ShowAsAssociation>
+  </Class>
+  <Struct Name="Examen.Level.ScenarioData">
+    <Position X="21.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAABAAAggAAAAAAEAAAAAAAAAAAACAAAAAABAA=</HashCode>
+      <FileName>Assets\Examen\Scripts\Level\SaveData.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Examen.Level.Saves">
+    <Position X="26" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Examen\Scripts\Level\SaveData.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="IChildDrawer" Collapsed="true">
+    <Position X="33.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Examen\Scripts\Drawers\DrawerBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Examen.Level.ILevelSetter" Collapsed="true">
+    <Position X="35.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Examen\Scripts\Level\Level.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -140,6 +140,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  OnMove:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!70 &3080343219737281619
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

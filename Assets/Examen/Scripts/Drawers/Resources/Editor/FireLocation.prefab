@@ -37,11 +37,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1647665334037630061, guid: 56f5c6bd0038afd498d41f0e17d059df, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 25
+      value: 34.5
       objectReference: {fileID: 0}
     - target: {fileID: 1647665334037630061, guid: 56f5c6bd0038afd498d41f0e17d059df, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 25
+      value: 34.5
       objectReference: {fileID: 0}
     - target: {fileID: 1647665334037630061, guid: 56f5c6bd0038afd498d41f0e17d059df, type: 3}
       propertyPath: m_LocalPosition.x
@@ -73,11 +73,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1647665334037630061, guid: 56f5c6bd0038afd498d41f0e17d059df, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 12.5
+      value: 17.25
       objectReference: {fileID: 0}
     - target: {fileID: 1647665334037630061, guid: 56f5c6bd0038afd498d41f0e17d059df, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 12.5
+      value: 17.25
       objectReference: {fileID: 0}
     - target: {fileID: 1647665334037630061, guid: 56f5c6bd0038afd498d41f0e17d059df, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -97,7 +97,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5187555656537420490, guid: 56f5c6bd0038afd498d41f0e17d059df, type: 3}
       propertyPath: m_Color.a
-      value: 0.39215687
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5187555656537420490, guid: 56f5c6bd0038afd498d41f0e17d059df, type: 3}
       propertyPath: m_Color.b
@@ -109,11 +109,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5764101930147773753, guid: 56f5c6bd0038afd498d41f0e17d059df, type: 3}
       propertyPath: m_text
-      value: Fire
+      value: Calamiteit
       objectReference: {fileID: 0}
     - target: {fileID: 5764101930147773753, guid: 56f5c6bd0038afd498d41f0e17d059df, type: 3}
       propertyPath: m_fontSize
-      value: 25.95
+      value: 6.55
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56f5c6bd0038afd498d41f0e17d059df, type: 3}

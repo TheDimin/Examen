@@ -1,4 +1,5 @@
-﻿using Examen.Managers;
+﻿using System.Collections;
+using Examen.Managers;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,13 +8,14 @@ namespace Examen.Level
 
     public class GameLevel : Level
     {
-        private PlayerController pc;
+        public PlayerController pc { get; private set; }
         public override int Scene { get; protected set; } = 1;
 
         public float Timer { get; private set; } = 60;
 
         public UnityEvent OnOutOfTime = new UnityEvent();
 
+        private Coroutine awaitInputCoroutine;
         public GameLevel(string id) : base()
         {
             LoadScenario(id);
@@ -27,7 +29,28 @@ namespace Examen.Level
 
             pc = Transform.FindObjectOfType<PlayerController>();
             Camera.main.gameObject.AddComponent<CameraPlayerSnap>();
+
+            RemoveInputHint();
+            pc.OnMove.AddListener(RemoveInputHint);
+
+            awaitInputCoroutine = pc.StartCoroutine(AwaitInput());
+            pc.StartCoroutine(AudioManager.Instance.PlayCode(LevelData.AlarmLocation));
             //   
+        }
+
+        IEnumerator AwaitInput()
+        {
+            yield return new WaitForSeconds(5);
+            hud.Transform.Find("HintSlot").gameObject.SetActive(true);
+
+        }
+
+        void RemoveInputHint()
+        {
+            if (awaitInputCoroutine != null)
+                pc.StopCoroutine(awaitInputCoroutine);
+
+            hud.Transform.Find("HintSlot").gameObject.SetActive(false);
         }
 
         public override void Update(float delta)

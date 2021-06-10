@@ -13,67 +13,67 @@ public static class IntHelpers
 
         if (directionInt > 348 || directionInt < 11) // this wont work
         {
-            return "N";
+            return "Noord";
         }
         else if (directionInt >= 11 && directionInt < 33)
         {
-            return "NNE";
+            return "Noord Noord Oost";
         }
         else if (directionInt >= 33 && directionInt < 56)
         {
-            return "NE";
+            return "Noord Oost";
         }
         else if (directionInt >= 56 && directionInt < 78)
         {
-            return "ENE";
+            return "Oost Noord Oost";
         }
         else if (directionInt >= 78 && directionInt < 101)
         {
-            return "E";
+            return "Oost";
         }
         else if (directionInt >= 101 && directionInt < 123)
         {
-            return "ESE";
+            return "Oost Zuid Oost";
         }
         else if (directionInt >= 123 && directionInt < 146)
         {
-            return "SE";
+            return "Zuid Oost";
         }
         else if (directionInt >= 146 && directionInt < 168)
         {
-            return "SSE";
+            return "Zuid Zuid Oost";
         }
         else if (directionInt >= 168 && directionInt < 191)
         {
-            return "S";
+            return "Zuid";
         }
         else if (directionInt >= 191 && directionInt < 213)
         {
-            return "SSW";
+            return "Zuid Zuid West";
         }
         else if (directionInt >= 213 && directionInt < 236)
         {
-            return "SW";
+            return "Zuid West";
         }
         else if (directionInt >= 236 && directionInt < 258)
         {
-            return "WSW";
+            return "West Zuid West";
         }
         else if (directionInt >= 258 && directionInt < 281)
         {
-            return "W";
+            return "West";
         }
         else if (directionInt >= 281 && directionInt < 303)
         {
-            return "WNW";
+            return "West Noord West";
         }
         else if (directionInt >= 303 && directionInt < 326)
         {
-            return "NW";
+            return "Noord West";
         }
         else if (directionInt >= 326 && directionInt < 348)
         {
-            return "NNW";
+            return "Noord Noord West";
         }
 
         return "UNKOWN";

@@ -11,7 +11,7 @@ public class ActiveEventDrawer : Drawer
     private Transform evenTransform;
     private Camera cam;
     private float size;
-
+    public bool DrawHint;
     protected override string Path { get; set; } = "Emergency";
 
     public ActiveEventDrawer() : base()
@@ -43,9 +43,13 @@ public class ActiveEventDrawer : Drawer
             return;
         }
 
+
         Vector3 screenUnclamped = cam.WorldToScreenPoint(evenTransform.position);
-        Transform.position = new Vector3(Mathf.Clamp(screenUnclamped.x, size / 2, Screen.width - size / 2),
-          Mathf.Clamp(screenUnclamped.y, size / 2, Screen.height - size / 2));
+        if (DrawHint)
+            Transform.position = new Vector3(Mathf.Clamp(screenUnclamped.x, size / 2, Screen.width - size / 2),
+                Mathf.Clamp(screenUnclamped.y, size / 2, Screen.height - size / 2));
+        else
+            Transform.position = screenUnclamped;
     }
 
 
