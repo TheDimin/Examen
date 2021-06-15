@@ -35,7 +35,6 @@ namespace Examen.Level
 
             awaitInputCoroutine = pc.StartCoroutine(AwaitInput());
             pc.StartCoroutine(AudioManager.Instance.PlayCode(LevelData.AlarmLocation));
-            //   
         }
 
         IEnumerator AwaitInput()

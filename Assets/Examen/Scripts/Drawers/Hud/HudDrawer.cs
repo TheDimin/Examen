@@ -73,7 +73,6 @@ namespace Examen.Level
             eventDrawer = null;
 
             SafeZoneManager.Instance.OnSafeZoneReached.RemoveListener(OnSafeZoneReached);
-            ((GameLevel)GameManager.Instance.level).OnOutOfTime.RemoveListener(OnOutOfTime);
         }
         private void OnOutOfTime()
         {
