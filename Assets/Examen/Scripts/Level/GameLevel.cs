@@ -34,7 +34,7 @@ namespace Examen.Level
             pc.OnMove.AddListener(RemoveInputHint);
 
             awaitInputCoroutine = pc.StartCoroutine(AwaitInput());
-            pc.StartCoroutine(AudioManager.Instance.PlayCode(LevelData.AlarmLocation));
+            pc.StartCoroutine(AudioManager.Instance.PlayCode(LevelData.AlarmLocation,LevelData.alarmOutside));
         }
 
         IEnumerator AwaitInput()

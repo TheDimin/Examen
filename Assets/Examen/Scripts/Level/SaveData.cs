@@ -15,7 +15,9 @@ namespace Examen.Level
         [SerializeField] public Vector3 FireLocation;
         [SerializeField] public Vector3 SafeZone;
         [SerializeField] public string AlarmLocation;
+        [SerializeField] public bool alarmOutside;
         [SerializeField] public bool LocatieHint;
+
         public ScenarioData(string _)
         {
             this.ID = "INVALID";
@@ -24,6 +26,7 @@ namespace Examen.Level
             FireLocation = Vector3.zero;
             SafeZone = Vector3.zero;
             AlarmLocation = "111";
+            alarmOutside = true;
             LocatieHint = true;
         }
     }

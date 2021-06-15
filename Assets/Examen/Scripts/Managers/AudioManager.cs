@@ -33,7 +33,7 @@ public class AudioManager : Singelton<AudioManager>
     }
 
 
-    public IEnumerator PlayCode(string code)
+    public IEnumerator PlayCode(string code,bool outside)
     {
         while (true)
         {
@@ -41,7 +41,7 @@ public class AudioManager : Singelton<AudioManager>
             {
                 for (int i = 0; i < Int32.Parse(codeChar.ToString()); i++)
                 {
-                    AudioClip clip = pc.IsOutSide ? OutSideClip : InsideAudioClip;
+                    AudioClip clip = outside ? OutSideClip : InsideAudioClip;
                     PlaySound(clip);
                     yield return new WaitForSeconds(clip.length);
                 }

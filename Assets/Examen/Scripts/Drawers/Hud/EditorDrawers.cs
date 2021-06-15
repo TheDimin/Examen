@@ -121,6 +121,7 @@ public class EditorHudDrawer : HudDrawer<ScenarioEditor>
 {
     private Slider WindSlider;
     private TMP_InputField AlarmCode;
+    private Toggle AlarmOutsideToggle;
     private SetLocationDrawer spawnLocation;
     private SetLocationDrawer fireLocation;
     private SetLocationDrawer BestSafeZoneLocation;
@@ -137,6 +138,7 @@ public class EditorHudDrawer : HudDrawer<ScenarioEditor>
         WindSlider = Transform.Find("Panel/Wind/Slider").GetComponent<Slider>();
         AlarmCode = Transform.Find("Panel/AlarmCode/InputField").GetComponent<TMP_InputField>();
         HintToggle = Transform.Find("Panel/LocationHint/Toggle").GetComponent<Toggle>();
+        AlarmOutsideToggle = Transform.Find("Panel/AlarmOutside/Toggle").GetComponent<Toggle>();
 
         WindSlider.onValueChanged.AddListener(arg0 => SetWind(arg0));
         AlarmCode.characterLimit = 3;
@@ -191,6 +193,7 @@ public class EditorHudDrawer : HudDrawer<ScenarioEditor>
         BestSafeZoneLocation.WorldPos = saveData.SafeZone;
         AlarmCode.text = saveData.AlarmLocation;
         HintToggle.isOn = saveData.LocatieHint;
+        AlarmOutsideToggle.isOn = saveData.alarmOutside;
     }
 
     private void Save(ref ScenarioData saveData)
@@ -201,6 +204,7 @@ public class EditorHudDrawer : HudDrawer<ScenarioEditor>
         saveData.SafeZone = BestSafeZoneLocation.WorldPos;
         saveData.AlarmLocation = AlarmCode.text;
         saveData.LocatieHint = HintToggle.isOn;
+        saveData.alarmOutside = AlarmOutsideToggle.isOn;
         Level.Save();
     }
 }
